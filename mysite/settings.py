@@ -55,7 +55,13 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        #'DIRS': [],
+        #'DIRS': [r'D:\Python\study\djangogirls\blog\templates'],
+        'DIRS': [
+            # Django가 render, redner_to_string등의 함수로
+            # 템플릿을 불러올 떄 기준이 되는 폴더 목록
+            os.path.join(BASE_DIR, 'templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
